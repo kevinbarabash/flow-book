@@ -36,5 +36,6 @@ const fooBar: FooBarT = { foo: '123', bar: 12 }; // Works!
 ```
 
 Given how easy it is to use intersection types incorrectly, it's preferable to
-use object type spread when combining types. It's more predictable. If there are
-duplicate keys than the key wins.
+use object type spread when combining types. It's more predictable and uses
+similar semantics to object value spread, namely: if there are duplicate keys
+than the key wins.

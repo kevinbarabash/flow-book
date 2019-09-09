@@ -36,12 +36,12 @@ const Suits = {
 
 type Suit = $Values<typeof Suits>;
 
-const foo = (suit: Suit) => {
-    // do something with suit
+const callTrump = (suit: Suit) => {
+    // set the trump suit
 }
 
-foo(Suits.Diamonds);
-foo("Rubies"); // error, "Rubies" is incompatible with enum Suits
+callTrump(Suits.Diamonds);
+callTrump("Rubies"); // error, "Rubies" is incompatible with enum Suits
 ```
 
 That's a lot of typing though. Using union types though is a lot simpler.
@@ -49,12 +49,12 @@ That's a lot of typing though. Using union types though is a lot simpler.
 ```typescript
 type Suit = "Diamonds" | "Clubs" | "Hearts" | "Spades";
 
-const foo = (suit: Suit) => {
-    // do something with suit
+const callTrump = (suit: Suit) => {
+    // set the trump suit
 };
 
-foo("Diamonds");
-foo("Rubies"); // error, "Rubies" is incompatible with enum Suits
+callTrump("Diamonds");
+callTrump("Rubies"); // error, "Rubies" is incompatible with enum Suits
 ```
 
 When using union types though, you have to use the actual values in the code
