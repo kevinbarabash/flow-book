@@ -29,7 +29,7 @@ switch (action.type) {
 }
 ```
 
-The key part of this is the `(action: empty)` cast in the `defualt` clause.
+The key part of this is the `(action: empty)` cast in the `default` clause.
 Normally casting a variable to `empty` will cause a Flow error. In this case it
 doesn't because Flow has determined that the `default` clause is unreachable.
 Flow doesn't type check code that's unreachable.
@@ -46,6 +46,6 @@ switch (action.type) {
 }
 ```
 
-Now that there's a case that isn't being handled, the `default` clause is not
+Now that there's a case that isn't being handled, the `default` clause is no
 longer unreachable so Flow type checks the code in that clause which triggers an
 error.
